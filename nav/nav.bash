@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#----------INITIAL-SETTINGS---------#
+#---------INITIAL-SETTINGS------#
 # How many lines to display
 NofRowsToDisplay=7
 # Hide files and show only folders
 HIDE_FILES=0
 # Hide or show help manu
 SHOW_HELP=0
-#------------------------------------#
+
 
 
 
@@ -99,6 +99,22 @@ NofMenuLines=7
 result=()
 
 
+# execute mkDirList with all parameters
+function mkDirListModified {
+    printf "loading files..."
+    # make list depending on status of $HIDE_FILES
+    if (( $HIDE_FILES ))
+    then
+        mkDirList $CURRENT_WD --hide $MyGREP_ATTR
+    else
+        mkDirList $CURRENT_WD --show-all $MyGREP_ATTR
+    fi
+    tput el1 
+}
+
+
+mkDirListModified
+
 # answer to key input
 ans=" "
 while [[ "$ans" != "x" ]]
@@ -143,6 +159,7 @@ do
              CURRENT_WD=$NEW_WD
              PWD=$NEW_WD
              MyCURSOR=$((1))
+	     mkDirListModified
          fi
     fi
     # Move back
@@ -151,6 +168,7 @@ do
          cd ..
          CURRENT_WD=$(pwd)
          MyCURSOR=$((1))
+	 mkDirListModified
     fi
     # Move to original folder
     if [[ "$ans" == "o" || "$ans" == "O" ]]
@@ -162,6 +180,8 @@ do
     if [[ "$ans" == "f" || "$ans" == "F" ]]
     then
         HIDE_FILES=$(( !$HIDE_FILES  ))
+	mkDirListModified
+
     fi
     # Show help 0 or 1
     if [[ "$ans" == "h" || "$ans" == "H" ]]
@@ -207,6 +227,7 @@ do
 	echo "ENTER GREP PARAMETERS:"
 	tput sgr0
 	read MyGREP_ATTR
+	mkDirListModified
     fi
 
 
@@ -221,18 +242,12 @@ do
     fi
 
 
-    # Print list
-    if (( $HIDE_FILES ))
-    then
-        mkDirList $CURRENT_WD --hide $MyGREP_ATTR
-    else
-        mkDirList $CURRENT_WD --show-all $MyGREP_ATTR
-    fi
-
     tput setaf 5
     echo ""    
     echo "_____[f]olders-only_____[h]help_____e[x]it"
     tput sgr0
+
+    # Print list of dirs
     showList $MyCURSOR ${result[@]}
  
 
@@ -245,7 +260,7 @@ do
         echo "| n - move cursor to #   | f - hide non-folders ($HIDE_FILES) |"
         echo "| o - to original folder | c - call command         |"
         echo "| h - show help ($SHOW_HELP)      | g - | grep '$MyGREP_ATTR' "
-      	echo "| x - exit               |                          |"
+        echo "| x - exit               |                          |"
         echo "|________________________|__________________________|"
     fi
     tput setaf 5
