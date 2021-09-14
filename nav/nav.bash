@@ -186,8 +186,8 @@ do
         echo "ENTER YOUR COMMAND:"
         tput sgr0
         read USER_COMMAND
-        echo "___...oooOOOooo...___"
         tput setaf 1
+        echo "___...oooOOOooo...___"
         tput sgr0
 	$USER_COMMAND $CURRENT_WD/${result[$(($MyCURSOR-1))]}
         tput setaf 1 
