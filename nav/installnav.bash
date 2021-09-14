@@ -1,13 +1,21 @@
 #!/bin/bash
-echo "makind dir in /usr/bin/nav"
-mkdir /usr/bin/nav
+echo "this file needs to be run with"
+echo "chmod a=x installnav.bash"
+echo "then call:"
+echo "sudo ./installnav.bash"
 
-echo "copying nav.bash"
-cp nav.bash /usr/bin/nav/nav.bash
-chmod -x /usr/bin/nav/nav.bash
+echo ""
+
+echo "copying nav"
+cp nav.bash /usr/bin/nav/nav
+chmod a=x nav
+
+echo ""
 
 echo "making alias for nav-command"
-alias nav=". /usr/bin/nav/nav.bash"
+alias nv=". nav"
 
-echo "if alias not created, try calling:"
-echo 'alias nav=". /usr/bin/nav/nav.bash"'
+echo ""
+
+echo "alias created: nv"
+echo 'if failed, try: alias nv=". nav"'
