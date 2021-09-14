@@ -4,12 +4,17 @@
 # Define major system parameters #
 ##################################
 
-#Which verssion of KDE to install?
+# Which verssion of KDE to install?
 # 0-none; 1-minimal; 2-full
 KDEtype=1
 
+# Sources list for apt
 SourcesList="/etc/apt/sources.list"
+# Version of Debian
 DebianVersion="buster"
+
+
+
 # not necessary
 PythonVersion="Python3.7"
 
