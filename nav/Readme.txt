@@ -3,10 +3,14 @@
 for a convenient navigation inside
 a bash shell.
 
+
   In order to work need to copy nav.bash
 to /usr/bin/nav
 and create shell alias:
-alias nav=". /usr/bin/nav/nav.bash"
+alias nv=". nav"
+or just call:
+. nav
+
 
   -= Use =-
 Call nav in the terminal.
@@ -31,13 +35,14 @@ press x to exit
 
   -= Setting up =-
   To install call:
-       sudo ./install.bash
+       schmod a+x installnav.bash
+       sudo ./installnav.bash
 as a superuser. nav.bash has to be in the
 same folder as install.bash.
 If does not work, then call:
        sudo bash install.bash
 And then manually make an alias:
-       alias nav=". /usr/bin/nav/nav.bash"
+       alias nav=". nav"
   To configure:
 In the beginning of nav.bash one can find
 following variables:
@@ -55,3 +60,4 @@ following variables:
 Bug [1]: Does not work well when file or folder names have [SPACE] in
 them. File named "qwe rty.txt" will be interpreted as two files:
 "qwe" and "rty.txt"
+Bug [2]: When going to / multiple times, get addresses like ///home
