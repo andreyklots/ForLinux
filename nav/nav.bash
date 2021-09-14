@@ -197,6 +197,7 @@ do
         tput sgr0
         read -n1
         echo ""
+	JUST_STARTED=1
     fi
 
     ### implement grep command
@@ -243,9 +244,9 @@ do
         echo "| w/s - move up/down     | a/d - next/prev folder   |"
         echo "| n - move cursor to #   | f - hide non-folders ($HIDE_FILES) |"
         echo "| o - to original folder | c - call command         |"
-	      echo "| h - show help ($SHOW_HELP)      | g - | grep '$MyGREP_ATTR' "
+        echo "| h - show help ($SHOW_HELP)      | g - | grep '$MyGREP_ATTR' "
       	echo "| x - exit               |                          |"
-				echo "|________________________|__________________________|"
+        echo "|________________________|__________________________|"
     fi
     tput setaf 5
     echo "_________________________________[CURSOR = $MyCURSOR]"
