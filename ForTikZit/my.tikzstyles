@@ -19,6 +19,7 @@
 
 % Edge styles
 \tikzstyle{line1}=[-,  draw=black, line width=1]
+\tikzstyle{line_D1}=[-, dashed, draw=black, line width=1]
 \tikzstyle{arr1}=[->, draw=black, line width=1]
 
 \tikzstyle{line_R1}=[-,  draw=red, line width=1]
@@ -34,6 +35,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \tikzstyle{line2}=[-,  draw=black, line width=2]
+\tikzstyle{line_D2}=[-, dashed, draw=black, line width=1]
 \tikzstyle{arr2}=[->, draw=black, line width=2]
 
 \tikzstyle{line_R2}=[-,  draw=red, line width=2]
