@@ -4,6 +4,9 @@
 % \tikzstyle{NAME}=[PROPERTY LIST]
 
 % Node styles
+\tikzstyle{none}=[shape=circle]
+
+
 \tikzstyle{n_OB}=[draw=black, fill=black, shape=circle]
 \tikzstyle{n_OW}=[draw=black, fill=white, shape=circle]
 \tikzstyle{n_W}=[draw=white,  fill=white, shape=circle]
