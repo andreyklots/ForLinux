@@ -4,11 +4,13 @@ for a convenient navigation inside
 a bash shell.
 
 
-  In order to work need to copy nav.bash
-to /usr/bin/nav
-and create shell alias:
+  In order to work need to
+chmod a+x installnav.bash
+  and
+sudo cp nav.bash /usr/bin/nav
+  and create shell alias:
 alias nv=". nav"
-or just call:
+  or just call:
 . nav
 
 
@@ -35,7 +37,7 @@ press x to exit
 
   -= Setting up =-
   To install call:
-       schmod a+x installnav.bash
+       chmod a+x installnav.bash
        sudo ./installnav.bash
 as a superuser. nav.bash has to be in the
 same folder as install.bash.
