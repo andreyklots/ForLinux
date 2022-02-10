@@ -1,0 +1,24 @@
+Command for windows
+After <C>-w:
+    v          -- make vertical split
+    arrows     -- navigate windows
+    L/R        -- flip windows
+    10< or 10> -- increase or decrease window width by 10
+    10- or 10> --         ---//---         height by 10
+    =          -- make equal width
+    _          -- collapse window
+    L/R        -- switch windows by moving them left/right
+
+
+Commands for tabs:
+    :tabnew    -- make new tab
+    gt         -- switch between tabs
+
+
+File explorer:
+    :Explore or :Ex
+    :Sexplore or :Sx
+
+Session:
+    :mks session.vim    -- save session as session.vim
+    :source session.vim -- restore session from session.vim
