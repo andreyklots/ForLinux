@@ -19,10 +19,12 @@ Call nav in the terminal.
 A list of files in the current directory
 will appear.
 use arrow keys or
- _______
-|   w   |
-| a s d |
-|_______|
+
+     ___
+    | w |
++---+---+---+
+| a | s | d |
++---+---+---+
 
 to navigate up/down in the list.
 Moveback to go up a folder.
